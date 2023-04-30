@@ -6,5 +6,6 @@
 @section('content')
 <h1>
     hello how are you?
+    {{$data}};
 </h1>
 @endsection
