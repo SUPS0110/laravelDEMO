@@ -17,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/table', function () {
+    return view('table');
+});
 Route::get('/hello',[lists::class,'index']);
-/*Route::get('/getdata',function(){
-    return $data=["hello","hi",];
-});*/
+
 Route::post('/savedata',[lists::class,'save']);

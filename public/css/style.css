@@ -1,3 +1,32 @@
-h1{
-    background-color: blueviolet;
+.header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.footer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.notes{
+    padding: 20px;
+ position: relative;
+ left: 50%;
+ top: 100px;
+ transform: translate(-50%,-50%);
+}
+table, th, td {
+    padding: 10px;
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+  
+  table{
+    background-color: blueviolet;
+    width: 100%;
+    height: fit-content;
+   
+  }

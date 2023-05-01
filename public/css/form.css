@@ -31,6 +31,7 @@ form{
         width: 450px;
     }
      button{
+        margin-bottom: 20px;
         box-shadow: 2px 2px gray;
         border: 2px dotted rgb(58, 58, 58);
         width: 80px;
