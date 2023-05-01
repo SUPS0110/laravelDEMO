@@ -1,17 +1,19 @@
 @extends('layout/layout')
 @section('content')   
-<form action="/savedata" method="post">
+
+<form action="@if(! isset($data)){{"/savedata"}}  @else {{"/update-data"}} @endif" method="post">
     <div class="list">
+     @if(isset($data))<input name="id" value="{{$data->id}}" type="number" hidden> @endif
         <label for="title">TITLE: </label>
-        <input  type="text" name="title" placeholder="Enter the title" >
+        <input  type="text" name="title" value="@if(isset($data)){{$data->title}} @endif" placeholder="Enter the title">
     </div>
             <div class="list">
-                <label for="description">DESCRIPTION: </label>
-                <textarea name="desc" placeholder="Notes"></textarea>
+                <label for="description" >DESCRIPTION: </label>
+                <textarea name="desc" placeholder="Notes">@if(isset($data)){{$data->desc}} @endif </textarea>
             </div>
             @csrf
 <button type="submit">ADD</button>
 
-        </form>
+     </form>
     
 @endsection

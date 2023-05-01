@@ -30,3 +30,6 @@ table, th, td {
     height: fit-content;
    
   }
+  a{
+    color: bisque;
+  }

@@ -17,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/table', function () {
-    return view('table');
-});
-Route::get('/hello',[lists::class,'index']);
+
+Route::get('/table',[lists::class,'index']);
 
 Route::post('/savedata',[lists::class,'save']);
+Route::get('/edit/{id}',[lists::class,'edit']);
+
+Route::post('/update-data', [lists::class, 'update']);
