@@ -24,3 +24,4 @@ Route::post('/savedata',[lists::class,'save']);
 Route::get('/edit/{id}',[lists::class,'edit']);
 
 Route::post('/update-data', [lists::class, 'update']);
+Route::get('/delete/{id}',[lists::class,'delete']);

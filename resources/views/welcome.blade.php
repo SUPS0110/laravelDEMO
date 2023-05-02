@@ -1,6 +1,11 @@
 @extends('layout/layout')
 @section('content')   
-
+@if ($errors->any())
+@foreach($errors->all() as $item)
+{{$item}}
+<br>
+@endforeach
+@endif
 <form action="@if(! isset($data)){{"/savedata"}}  @else {{"/update-data"}} @endif" method="post">
     <div class="list">
      @if(isset($data))<input name="id" value="{{$data->id}}" type="number" hidden> @endif

@@ -1,4 +1,5 @@
 @extends('layout/layout')
+@if(session('status')){{session('status')}} @endif
 @section('content')
 <div class="notes">
 <table>

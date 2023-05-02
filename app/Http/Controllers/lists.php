@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\todolist;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 
 class lists extends Controller
@@ -10,6 +11,10 @@ class lists extends Controller
     public function save(request $req){
     
         $data=todolist::all();
+        $req->validate([
+            'title'=>'required|max:225|unique:todolist',
+            'desc'=>'required'
+        ]);
         $new=new todolist();
         $new->title=$req->title;
         $new->desc=$req->desc;
@@ -40,6 +45,12 @@ if($update->save()){
 else{
     return "failed";
 }
+}
+public function delete($id){
+    $data=todolist::find($id);
+    if($data->delete()){
+        return back()->with("status","deleted");
+    }
 }
 
 }
